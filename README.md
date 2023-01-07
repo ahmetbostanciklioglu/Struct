@@ -54,9 +54,9 @@ struct propertyObserverStruct {
 }
 
 var propertyObject = propertyObserverStruct(storedProperty: "Property observer", propertyObserver: 20)
-propertyObject.propertyObserver = 50
-propertyObject.propertyObserver = 70
-propertyObject.propertyObserver = 100
+propertyObject.propertyObserver = 50   // print("Property observer is 50% improved")
+propertyObject.propertyObserver = 70   // print("Property observer is 70% improved")
+propertyObject.propertyObserver = 100  // print("Property observer is 100% improved")
 ```
 
 **Method in struct:**
@@ -68,7 +68,9 @@ struct MethodStruct {
         return property * 10
     }
 }
-let methodObject  = MethodStruct(property: 10).method(type: 12)
+let methodObject  = MethodStruct(property: 10)
+methodObject.method(type: 12) // 100
+methodObject.property  // 10
 ```
 
 
