@@ -1,7 +1,7 @@
 # Struct
 
 
-**Struct**
+**Struct:**
 ```
 struct Family {
     var son: String
@@ -16,7 +16,7 @@ var object1 = Family(son: "Ahmet", daughter: "Asiye", father: "Ali", mother: "Ma
 object1.son = "Ali"
 ```
 
-**Default Property**
+**Default property in struct:**
 ```
 struct Profile {
     var firstName: stringType
@@ -27,14 +27,13 @@ struct Profile {
 var object2 = Profile(firstName: "Ahmet", old: 19)
 ```
 
-**Computed property in struct**
+**Computed property in struct:**
 ```
 struct StoredAndComputedPropertyStruct {
-    //MARK: stored property
-    var storedProperty: String
+
+    var storedProperty: String  // stored property
     
-    //MARK: Computed property
-    var computedProperty: String {
+    var computedProperty: String {  // Computed property
         return   "This is a computed property"
     }
 }
@@ -42,5 +41,54 @@ let storedProperty = StoredAndComputedPropertyStruct(storedProperty: "Ali")
 print(storedProperty.computedProperty)
 ```
 
+**Property observers in struct:**
+```
+struct propertyObserverStruct {
+    var storedProperty: String
+    var propertyObserver: Int {
+        
+        didSet { // this code block will run after first propertyObserver value applied (after  'propertyObserver: 20' value )
+            print("\(storedProperty) is \(propertyObserver)% improved")
+        }
+    }
+}
+
+var propertyObject = propertyObserverStruct(storedProperty: "Property observer", propertyObserver: 20)
+propertyObject.propertyObserver = 50
+propertyObject.propertyObserver = 70
+propertyObject.propertyObserver = 100
+```
+
+**Method in struct:**
+```
+struct MethodStruct {
+    var property: Int
+    
+    func method(type: Int) -> Int {
+        return property * 10
+    }
+}
+let methodObject  = MethodStruct(property: 10).method(type: 12)
+```
+
+
+**Mutating method in struct:**
+```
+struct MutatingMethods {
+    var property: String = "Mehmet"
+    
+    mutating func mutatingFunction() { //to change the value of property with function in struct use mutating keyboard before the 'func' keyboard
+        property = "Ahmet"
+    }
+    
+var test = MutatingMethods() 
+print(test.property) // "Mehmet"
+
+var mutatingObject = MutatingMethods(property: "Ali") 
+print(mutatingObject.property) //"Ali
+
+mutatingObject.mutatingFunction()
+print(mutatingObject.property) //Ahmet
+```
 
 
