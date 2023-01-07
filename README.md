@@ -87,7 +87,7 @@ var test = MutatingMethods()
 print(test.property) // "Mehmet"
 
 var mutatingObject = MutatingMethods(property: "Ali") 
-print(mutatingObject.property) //"Ali
+print(mutatingObject.property) //Ali
 
 mutatingObject.mutatingFunction()
 print(mutatingObject.property) //Ahmet
