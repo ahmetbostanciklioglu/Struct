@@ -1,96 +1,49 @@
-# Struct
+<div align="center">
 
+# 🧱 Swift Basics: Struct
 
-**Struct:**
-```
-struct Family {
-    var son: String
-    var daughter: String
-    var father: String
-    var mother: String
-    var grandmother: String
-    var grandfather: String
-}
+**A concise, runnable playground for learning Swift structures**
 
-var object1 = Family(son: "Ahmet", daughter: "Asiye", father: "Ali", mother: "Marie", grandmother: "Natalie", grandfather: "Marcus")
-object1.son = "Ali"
-```
+[![Platform](https://img.shields.io/badge/Platform-iOS-lightgrey?style=flat-square)](https://developer.apple.com/ios/)
+[![Swift](https://img.shields.io/badge/Swift-5-orange?style=flat-square&logo=swift)](https://swift.org)
+[![Xcode](https://img.shields.io/badge/Xcode-Playground-blue?style=flat-square&logo=xcode)](https://developer.apple.com/xcode/)
+[![Stars](https://img.shields.io/github/stars/ahmetbostanciklioglu/Struct?style=flat-square&color=6E48AA)](https://github.com/ahmetbostanciklioglu/Struct/stargazers)
+[![Last Commit](https://img.shields.io/github/last-commit/ahmetbostanciklioglu/Struct?style=flat-square&color=4776E6)](https://github.com/ahmetbostanciklioglu/Struct/commits)
 
-**Default property in struct:**
-```
-struct Profile {
-    var firstName: stringType
-    var old: Int
-    var state = "Miami" //Default property
-    typealias stringType = String
-}
-var object2 = Profile(firstName: "Ahmet", old: 19)
-```
+</div>
 
-**Computed property in struct:**
-```
-struct StoredAndComputedPropertyStruct {
+## 📖 Overview
 
-    var storedProperty: String  // stored property
-    
-    var computedProperty: String {  // Computed property
-        return   "This is a computed property"
-    }
-}
-let storedProperty = StoredAndComputedPropertyStruct(storedProperty: "Ali")
-print(storedProperty.computedProperty)
+A `struct` in Swift is a value type used to group related data and behavior into a single, reusable model. This repository is a small, runnable Swift playground that demonstrates the core building blocks of structures — from a plain data model to properties, methods, and how to mutate a struct's values.
+
+It is meant as a concise learning reference: open it, read the comments, and run each example to see the concepts in action.
+
+## 📚 What it covers
+
+- **Fundamental structs** — defining a struct and creating instances via the memberwise initializer.
+- **Default & typealias properties** — giving a property a default value and using `typealias` for a property type.
+- **Stored vs. computed properties** — the difference between a value that is stored and one that is calculated on access.
+- **Property observers** — running code with `didSet` whenever a stored property changes.
+- **Methods** — adding functions that operate on a struct's properties.
+- **Mutating methods** — using the `mutating` keyword to change a struct's stored properties from within a method.
+
+## 🚀 Getting Started
+
+```bash
+git clone https://github.com/ahmetbostanciklioglu/Struct.git
+cd Struct
 ```
 
-**Property observers in struct:**
-```
-struct propertyObserverStruct {
-    var storedProperty: String
-    var propertyObserver: Int {
-        
-        didSet { // this code block will run after first propertyObserver value applied (after  'propertyObserver: 20' value )
-            print("\(storedProperty) is \(propertyObserver)% improved")
-        }
-    }
-}
+Unzip `Struct.playground.zip`, then open `Struct.playground` in Xcode. The playground runs automatically, or press `Command-R` to re-execute and watch the results appear in the sidebar.
 
-var propertyObject = propertyObserverStruct(storedProperty: "Property observer", propertyObserver: 20)
-propertyObject.propertyObserver = 50   // print("Property observer is 50% improved")
-propertyObject.propertyObserver = 70   // print("Property observer is 70% improved")
-propertyObject.propertyObserver = 100  // print("Property observer is 100% improved")
-```
+## 📋 Requirements
 
-**Method in struct:**
-```
-struct MethodStruct {
-    var property: Int
-    
-    func method(type: Int) -> Int {
-        return property * 10
-    }
-}
-let methodObject  = MethodStruct(property: 10)
-methodObject.method(type: 12) // 100
-methodObject.property  // 10
-```
+- macOS with Xcode installed
+- Swift 5+
+- A Swift Playground-capable environment (Xcode or Swift Playgrounds)
 
+## 🧑‍💻 Author
 
-**Mutating method in struct:**
-```
-struct MutatingMethods {
-    var property: String = "Mehmet"
-    
-    mutating func mutatingFunction() { //to change the value of property with function in struct use mutating keyboard before the 'func' keyboard
-        property = "Ahmet"
-    }
-    
-var test = MutatingMethods() 
-print(test.property) // "Mehmet"
+**Ahmet Bostancıklıoğlu** — [@ahmetbostanciklioglu](https://github.com/ahmetbostanciklioglu) · ahmetbostancikli@gmail.com
 
-var mutatingObject = MutatingMethods(property: "Ali") 
-print(mutatingObject.property) //Ali
-
-mutatingObject.mutatingFunction()
-print(mutatingObject.property) //Ahmet
-```
-
-
+> ⭐ If this helped you, consider giving the repo a star!
